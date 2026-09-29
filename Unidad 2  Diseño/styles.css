@@ -1,0 +1,166 @@
+/* ===== Colores ===== */
+:root {
+  --amarillo: #F4C542;   /* fondo principal */
+  --verde: #1B3A2B;      /* barra, título y textos */
+  --crema: #FBF3D6;      /* texto sobre la barra */
+  --chile: #C8321E;      /* subrayado y botón */
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--amarillo);
+    color: var(--verde);
+    font-family: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+}
+
+a:focus-visible { outline: 3px solid var(--chile); outline-offset: 3px; }
+
+/* ===== Barra de información ===== */
+.infobar { background: var(--verde); color: var(--crema); }
+
+.infobar nav {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: .75rem 1.25rem;
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.infobar a {
+    color: inherit;
+    text-decoration: none;
+    padding: .55rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 500;
+    display: inline-flex;
+    gap: .5rem;
+    align-items: center;
+    border: 1.5px solid rgba(251, 243, 214, .4);
+}
+
+.infobar a:hover { background: var(--crema); color: var(--verde); }
+
+.infobar svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ===== Sección principal ===== */
+.hero {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.25rem 4rem;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    min-height: calc(100vh - 4rem);
+}
+
+/* Título */
+.hero h1 {
+    font-family: "Bricolage Grotesque", "Arial Black", Impact, sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.2rem, 8vw, 6.4rem);
+    line-height: .92;
+    letter-spacing: -.02em;
+    margin: 0 0 1.5rem;
+}
+
+.hero h1 span { display: block; }
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 62%;
+    height: .5rem;
+    margin-top: 1rem;
+    background: var(--chile);
+    border-radius: 4px;
+}
+
+/* Eslogan */
+.slogan {
+    font-family: "Bricolage Grotesque", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+    max-width: 20ch;
+}
+
+/* ===== Taco  ===== */
+
+
+.hint {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--chile);
+    transform: rotate(-6deg);
+    align-self: flex-start;
+    margin-left: 12%;
+    display: flex;
+    align-items: flex-end;
+    gap: .4rem;
+}
+
+.hint svg {
+    width: 3rem;
+    height: 3rem;
+    fill: none;
+    stroke: var(--chile);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform: rotate(10deg) translateY(.4rem);
+}
+
+.taco {
+    display: block;
+    width: min(100%, 27rem);
+    max-height: 25rem;
+    position: relative;
+    text-decoration: none;
+    transition: transform .25s cubic-bezier(.3, 1.6, .5, 1);
+}
+
+.taco:hover { transform: rotate(-4deg) scale(1.04); }
+.taco:active { transform: scale(.97); }
+
+.taco .label {
+    position: absolute;
+    left: 50%;
+    bottom: 17%;
+    transform: translateX(-50%);
+    background: var(--chile);
+    color: #FFF7DC;
+    padding: .6rem 1.4rem;
+    border-radius: 999px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, .25);
+}
+
+/* ===== Celular ===== */
+@media (max-width: 52rem) {
+.hero {
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+    min-height: auto;
+}
+.order { margin-top: 1rem; }
+}
